@@ -178,6 +178,13 @@
 
 .product-points article>b img{display:block;width:38px;height:38px;object-fit:contain}
 @media(max-width:600px){.product-points article>b img{width:34px;height:34px}}
+
+/* RTB icons stay white and static; no hover fill or motion. */
+.product-points article,.product-points article>b{transition:none!important}
+.product-points article:hover{background:transparent!important;box-shadow:none!important}
+.product-points article:hover>b{transform:none!important;background:transparent!important;border-color:rgba(255,255,255,.45)!important;color:#fff!important}
+.product-points article>b{color:#fff!important;border-color:rgba(255,255,255,.45)!important;background:transparent!important}
+.product-points article>b img{filter:brightness(0) invert(1);}
 @media(max-width:359.98px){:root{--page-gutter:12px}.site-header>a img{width:145px}.button-small{padding:9px 10px;font-size:.78rem}.hero h1{font-size:2.2rem}.hero-lead{font-size:.92rem}.counter strong{font-size:1.85rem}.counter>span{font-size:.7rem}.counter small{font-size:.58rem}.pledge-card{padding:22px 14px}.impact-copy h2,.section h2{font-size:2.05rem}.product-points article{grid-template-columns:46px minmax(0,1fr);padding-left:8px;padding-right:8px}.footer-logo img{width:170px}}
 
 .kv-banner{width:100%;background:#536629;overflow:hidden}
