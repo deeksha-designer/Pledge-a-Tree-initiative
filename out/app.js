@@ -9,5 +9,11 @@ const btn=form.querySelector('.submit');btn.disabled=true;btn.textContent='Addin
 document.querySelector('#pledgeAgain').addEventListener('click',()=>{form.reset();success.hidden=true;form.hidden=false;form.elements.name.focus()});document.querySelector('#year').textContent=new Date().getFullYear();showCount(FALLBACK_COUNT);setTimeout(refresh,1100);setInterval(refresh,30000);
 document.addEventListener('DOMContentLoaded',()=>{
   const rtbLabels=['Sustainable & natural Emulsion','Recycled packaging','Air Purification Tech','High Sheen'];
-  document.querySelectorAll('.product-points h3').forEach((el,i)=>{if(rtbLabels[i]) el.textContent=rtbLabels[i]});
+  const rtbIcons=['sustainable & natural emulsion.png','recycle packaging.png','air purification tech.png','high sheen.png'];
+  document.querySelectorAll('.product-points article').forEach((article,i)=>{
+    const title=article.querySelector('h3'); if(title&&rtbLabels[i]) title.textContent=rtbLabels[i];
+    const icon=article.querySelector('b'); if(icon&&rtbIcons[i]) icon.innerHTML=`<img src="assets/${rtbIcons[i]}" alt="" aria-hidden="true">`;
+  });
+  const kv=document.querySelector('.kv-banner'), impact=document.querySelector('.impact');
+  if(kv&&impact) impact.parentNode.insertBefore(kv,impact);
 });
